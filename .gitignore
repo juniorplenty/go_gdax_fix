@@ -12,3 +12,14 @@
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
+
+.env
+client.cfg
+vendor/
+
+# compiled binaries
+./cmd/go_gdax_fix/go_gdax_fix
+./go_gdax_fix
+
+# logs from runs
+logs/
