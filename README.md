@@ -19,7 +19,8 @@ vs
 * Replace `<GDAX_KEY>` in `client.template.cfg` with your GDAX key, then rename `client.template.cfg` to `client.cfg`.
 * Set `GDAX_SECRET`, `GDAX_KEY` and `GDAX_PASSPHRASE` in `.env.template`, then rename `.env.template` to `.env`.
 * `make run`.
-* An attempt to login is made. A logon message will be received, *if and only if* you successfully login, otherwise a *logout* occurs.
+* An attempt to login is made. A *logon* message will be received, *if and only if* you successfully login, otherwise a *logout* occurs.
+* After *logon* is received a single sell order is placed, see the function `sendNewOrder`. You should see a new message in the log with `35=8`, where `35` is type and `8` is the value, in this case it is the *Execution Report* (https://docs.gdax.com/#execution-report-8).
 
 ```sh
 INFO[0000] TradeClient:OnCreate                          sessionID="..."
@@ -29,8 +30,5 @@ INFO[0000] TradeClient:OnLogon                           sessionID="..."
 ^Csignal: interrupt
 
 ```
-
-**TODO:**
-* Place single market order.
 
 Thanks to: <https://github.com/quickfixgo/quickfix>.
